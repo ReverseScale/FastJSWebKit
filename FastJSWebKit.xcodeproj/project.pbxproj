@@ -1,0 +1,635 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		52617138217862FE00CB29A5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52617137217862FE00CB29A5 /* AppDelegate.swift */; };
+		5261713A217862FE00CB29A5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52617139217862FE00CB29A5 /* ViewController.swift */; };
+		5261713D217862FE00CB29A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5261713B217862FE00CB29A5 /* Main.storyboard */; };
+		5261713F217862FF00CB29A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5261713E217862FF00CB29A5 /* Assets.xcassets */; };
+		52617142217862FF00CB29A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52617140217862FF00CB29A5 /* LaunchScreen.storyboard */; };
+		5261714D217862FF00CB29A5 /* FastJSWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261714C217862FF00CB29A5 /* FastJSWebKitTests.swift */; };
+		52617158217862FF00CB29A5 /* FastJSWebKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */; };
+		526171662178631100CB29A5 /* FastJSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526171652178631100CB29A5 /* FastJSController.swift */; };
+		526171682178638500CB29A5 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 526171672178638500CB29A5 /* test.html */; };
+		5261716C21786A8100CB29A5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5261716A2178685D00CB29A5 /* SnapKit.framework */; };
+		5261716D21786A8100CB29A5 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5261716A2178685D00CB29A5 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52617149217862FF00CB29A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5261712C217862FE00CB29A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52617133217862FE00CB29A5;
+			remoteInfo = FastJSWebKit;
+		};
+		52617154217862FF00CB29A5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5261712C217862FE00CB29A5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52617133217862FE00CB29A5;
+			remoteInfo = FastJSWebKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5261716E21786A8100CB29A5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5261716D21786A8100CB29A5 /* SnapKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		52617134217862FE00CB29A5 /* FastJSWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastJSWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52617137217862FE00CB29A5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		52617139217862FE00CB29A5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5261713C217862FE00CB29A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5261713E217862FF00CB29A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52617141217862FF00CB29A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52617143217862FF00CB29A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52617148217862FF00CB29A5 /* FastJSWebKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastJSWebKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5261714C217862FF00CB29A5 /* FastJSWebKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastJSWebKitTests.swift; sourceTree = "<group>"; };
+		5261714E217862FF00CB29A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52617153217862FF00CB29A5 /* FastJSWebKitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FastJSWebKitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastJSWebKitUITests.swift; sourceTree = "<group>"; };
+		52617159217862FF00CB29A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		526171652178631100CB29A5 /* FastJSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastJSController.swift; sourceTree = "<group>"; };
+		526171672178638500CB29A5 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		5261716A2178685D00CB29A5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52617131217862FE00CB29A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5261716C21786A8100CB29A5 /* SnapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52617145217862FF00CB29A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52617150217862FF00CB29A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5261712B217862FE00CB29A5 = {
+			isa = PBXGroup;
+			children = (
+				52617136217862FE00CB29A5 /* FastJSWebKit */,
+				5261714B217862FF00CB29A5 /* FastJSWebKitTests */,
+				52617156217862FF00CB29A5 /* FastJSWebKitUITests */,
+				52617135217862FE00CB29A5 /* Products */,
+				526171692178685C00CB29A5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		52617135217862FE00CB29A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52617134217862FE00CB29A5 /* FastJSWebKit.app */,
+				52617148217862FF00CB29A5 /* FastJSWebKitTests.xctest */,
+				52617153217862FF00CB29A5 /* FastJSWebKitUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52617136217862FE00CB29A5 /* FastJSWebKit */ = {
+			isa = PBXGroup;
+			children = (
+				526171672178638500CB29A5 /* test.html */,
+				52617137217862FE00CB29A5 /* AppDelegate.swift */,
+				52617139217862FE00CB29A5 /* ViewController.swift */,
+				526171652178631100CB29A5 /* FastJSController.swift */,
+				5261713B217862FE00CB29A5 /* Main.storyboard */,
+				5261713E217862FF00CB29A5 /* Assets.xcassets */,
+				52617140217862FF00CB29A5 /* LaunchScreen.storyboard */,
+				52617143217862FF00CB29A5 /* Info.plist */,
+			);
+			path = FastJSWebKit;
+			sourceTree = "<group>";
+		};
+		5261714B217862FF00CB29A5 /* FastJSWebKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				5261714C217862FF00CB29A5 /* FastJSWebKitTests.swift */,
+				5261714E217862FF00CB29A5 /* Info.plist */,
+			);
+			path = FastJSWebKitTests;
+			sourceTree = "<group>";
+		};
+		52617156217862FF00CB29A5 /* FastJSWebKitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */,
+				52617159217862FF00CB29A5 /* Info.plist */,
+			);
+			path = FastJSWebKitUITests;
+			sourceTree = "<group>";
+		};
+		526171692178685C00CB29A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5261716A2178685D00CB29A5 /* SnapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		52617133217862FE00CB29A5 /* FastJSWebKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5261715C217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKit" */;
+			buildPhases = (
+				52617130217862FE00CB29A5 /* Sources */,
+				52617131217862FE00CB29A5 /* Frameworks */,
+				52617132217862FE00CB29A5 /* Resources */,
+				5261716E21786A8100CB29A5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FastJSWebKit;
+			productName = FastJSWebKit;
+			productReference = 52617134217862FE00CB29A5 /* FastJSWebKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		52617147217862FF00CB29A5 /* FastJSWebKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5261715F217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKitTests" */;
+			buildPhases = (
+				52617144217862FF00CB29A5 /* Sources */,
+				52617145217862FF00CB29A5 /* Frameworks */,
+				52617146217862FF00CB29A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5261714A217862FF00CB29A5 /* PBXTargetDependency */,
+			);
+			name = FastJSWebKitTests;
+			productName = FastJSWebKitTests;
+			productReference = 52617148217862FF00CB29A5 /* FastJSWebKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		52617152217862FF00CB29A5 /* FastJSWebKitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52617162217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKitUITests" */;
+			buildPhases = (
+				5261714F217862FF00CB29A5 /* Sources */,
+				52617150217862FF00CB29A5 /* Frameworks */,
+				52617151217862FF00CB29A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				52617155217862FF00CB29A5 /* PBXTargetDependency */,
+			);
+			name = FastJSWebKitUITests;
+			productName = FastJSWebKitUITests;
+			productReference = 52617153217862FF00CB29A5 /* FastJSWebKitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5261712C217862FE00CB29A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Steven Xie";
+				TargetAttributes = {
+					52617133217862FE00CB29A5 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					52617147217862FF00CB29A5 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 52617133217862FE00CB29A5;
+					};
+					52617152217862FF00CB29A5 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = 52617133217862FE00CB29A5;
+					};
+				};
+			};
+			buildConfigurationList = 5261712F217862FE00CB29A5 /* Build configuration list for PBXProject "FastJSWebKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5261712B217862FE00CB29A5;
+			productRefGroup = 52617135217862FE00CB29A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				52617133217862FE00CB29A5 /* FastJSWebKit */,
+				52617147217862FF00CB29A5 /* FastJSWebKitTests */,
+				52617152217862FF00CB29A5 /* FastJSWebKitUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		52617132217862FE00CB29A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52617142217862FF00CB29A5 /* LaunchScreen.storyboard in Resources */,
+				5261713F217862FF00CB29A5 /* Assets.xcassets in Resources */,
+				5261713D217862FE00CB29A5 /* Main.storyboard in Resources */,
+				526171682178638500CB29A5 /* test.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52617146217862FF00CB29A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52617151217862FF00CB29A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		52617130217862FE00CB29A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5261713A217862FE00CB29A5 /* ViewController.swift in Sources */,
+				526171662178631100CB29A5 /* FastJSController.swift in Sources */,
+				52617138217862FE00CB29A5 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52617144217862FF00CB29A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5261714D217862FF00CB29A5 /* FastJSWebKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5261714F217862FF00CB29A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52617158217862FF00CB29A5 /* FastJSWebKitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5261714A217862FF00CB29A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52617133217862FE00CB29A5 /* FastJSWebKit */;
+			targetProxy = 52617149217862FF00CB29A5 /* PBXContainerItemProxy */;
+		};
+		52617155217862FF00CB29A5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52617133217862FE00CB29A5 /* FastJSWebKit */;
+			targetProxy = 52617154217862FF00CB29A5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5261713B217862FE00CB29A5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5261713C217862FE00CB29A5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		52617140217862FF00CB29A5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				52617141217862FF00CB29A5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5261715A217862FF00CB29A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5261715B217862FF00CB29A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5261715D217862FF00CB29A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FastJSWebKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5261715E217862FF00CB29A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = FastJSWebKit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		52617160217862FF00CB29A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				INFOPLIST_FILE = FastJSWebKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastJSWebKit.app/FastJSWebKit";
+			};
+			name = Debug;
+		};
+		52617161217862FF00CB29A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				INFOPLIST_FILE = FastJSWebKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FastJSWebKit.app/FastJSWebKit";
+			};
+			name = Release;
+		};
+		52617163217862FF00CB29A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				INFOPLIST_FILE = FastJSWebKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FastJSWebKit;
+			};
+			name = Debug;
+		};
+		52617164217862FF00CB29A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MQ4BAK6QRP;
+				INFOPLIST_FILE = FastJSWebKitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = R.S.FastJSWebKitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FastJSWebKit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5261712F217862FE00CB29A5 /* Build configuration list for PBXProject "FastJSWebKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5261715A217862FF00CB29A5 /* Debug */,
+				5261715B217862FF00CB29A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5261715C217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5261715D217862FF00CB29A5 /* Debug */,
+				5261715E217862FF00CB29A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5261715F217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52617160217862FF00CB29A5 /* Debug */,
+				52617161217862FF00CB29A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52617162217862FF00CB29A5 /* Build configuration list for PBXNativeTarget "FastJSWebKitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52617163217862FF00CB29A5 /* Debug */,
+				52617164217862FF00CB29A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5261712C217862FE00CB29A5 /* Project object */;
+}
