@@ -16,8 +16,6 @@
 		52617158217862FF00CB29A5 /* FastJSWebKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */; };
 		526171662178631100CB29A5 /* FastJSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526171652178631100CB29A5 /* FastJSController.swift */; };
 		526171682178638500CB29A5 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 526171672178638500CB29A5 /* test.html */; };
-		5261716C21786A8100CB29A5 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5261716A2178685D00CB29A5 /* SnapKit.framework */; };
-		5261716D21786A8100CB29A5 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5261716A2178685D00CB29A5 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,20 +34,6 @@
 			remoteInfo = FastJSWebKit;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		5261716E21786A8100CB29A5 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				5261716D21786A8100CB29A5 /* SnapKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		52617134217862FE00CB29A5 /* FastJSWebKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastJSWebKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +59,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5261716C21786A8100CB29A5 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +151,6 @@
 				52617130217862FE00CB29A5 /* Sources */,
 				52617131217862FE00CB29A5 /* Frameworks */,
 				52617132217862FE00CB29A5 /* Resources */,
-				5261716E21786A8100CB29A5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

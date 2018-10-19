@@ -8,7 +8,6 @@
 
 import UIKit
 import WebKit
-import SnapKit
 
 private let titleKeyPath = "title"
 private let estimatedProgressKeyPath = "estimatedProgress"
@@ -224,28 +223,9 @@ class FastJSController: UIViewController {
     }
     
     //MARK:- AutoLayout
-    override func updateViewConstraints() {
-        if #available(iOS 11.0, *) {
-            wkWebView.scrollView.contentInsetAdjustmentBehavior = .never
-        } else {
-            automaticallyAdjustsScrollViewInsets = false
-        }
-        wkWebView.snp.makeConstraints { (make) in
-            if #available(iOS 11.0, *) {
-                make.top.bottom.equalTo(self.view.safeAreaLayoutGuide)
-                make.left.right.equalToSuperview()
-            } else {
-                make.size.equalTo(self.view)
-                make.center.equalTo(self.view)
-            }
-        }
-    
-        super.updateViewConstraints()
-    }
-    
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-//        wkWebView.frame = view.bounds
+        wkWebView.frame = view.bounds
         
         let isIOS11 = ProcessInfo.processInfo.isOperatingSystemAtLeast(
             OperatingSystemVersion(majorVersion: 11, minorVersion: 0, patchVersion: 0))
