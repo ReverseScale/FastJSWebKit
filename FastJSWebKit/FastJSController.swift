@@ -9,6 +9,12 @@
 import UIKit
 import WebKit
 
+struct JKWkWebViewHandler {
+    fileprivate var name:String!
+    fileprivate var parmers:[String]!
+    fileprivate var action:(([String:AnyObject]) -> Void)?
+}
+
 private let titleKeyPath = "title"
 private let estimatedProgressKeyPath = "estimatedProgress"
 
@@ -25,16 +31,16 @@ class FastJSController: UIViewController {
     var titleColor: UIColor? = nil
     var closing: Bool! = false
     
-    var navBarTitle: UILabel!
+    private var mAsyncScriptArray:[JKWkWebViewHandler] = []
+    private var mSyncScriptArray:[JKWkWebViewHandler] = []
     
+    var wkWebView = WKWebView()
+    var navBarTitle: UILabel!
     public final var progressBar: UIProgressView {
         get {
             return _progressBar
         }
     }
-
-    private var mAsyncScriptArray:[JKWkWebViewHandler] = []
-    private var mSyncScriptArray:[JKWkWebViewHandler] = []
     
     // MARK: KVO
     open override func observeValue(forKeyPath keyPath: String?,
@@ -51,14 +57,15 @@ class FastJSController: UIViewController {
         }
     }
     
-    //ProgressView控件
+    // ProgressView控件
     private lazy final var _progressBar: UIProgressView = {
         let progressBar = UIProgressView(progressViewStyle: .bar)
         progressBar.backgroundColor = .clear
         progressBar.trackTintColor = .clear
         return progressBar
     }()
-    //底部后退按钮
+    
+    // 底部后退按钮
     lazy var backBarButtonItem: UIBarButtonItem =  {
         var tempBackBarButtonItem = UIBarButtonItem(image: FastJSController.bundledImage(named: "SwiftWebVCBack"),
                                                     style: UIBarButtonItem.Style.plain,
@@ -68,7 +75,8 @@ class FastJSController: UIViewController {
         tempBackBarButtonItem.tintColor = self.buttonColor
         return tempBackBarButtonItem
     }()
-    //底部前进按钮
+    
+    // 底部前进按钮
     lazy var forwardBarButtonItem: UIBarButtonItem =  {
         var tempForwardBarButtonItem = UIBarButtonItem(image: FastJSController.bundledImage(named: "SwiftWebVCNext"),
                                                        style: UIBarButtonItem.Style.plain,
@@ -78,7 +86,8 @@ class FastJSController: UIViewController {
         tempForwardBarButtonItem.tintColor = self.buttonColor
         return tempForwardBarButtonItem
     }()
-    //底部刷新按钮
+    
+    // 底部刷新按钮
     lazy var refreshBarButtonItem: UIBarButtonItem = {
         var tempRefreshBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.refresh,
                                                        target: self,
@@ -86,7 +95,8 @@ class FastJSController: UIViewController {
         tempRefreshBarButtonItem.tintColor = self.buttonColor
         return tempRefreshBarButtonItem
     }()
-    //底部停止按钮
+    
+    // 底部停止按钮
     lazy var stopBarButtonItem: UIBarButtonItem = {
         var tempStopBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.stop,
                                                     target: self,
@@ -94,7 +104,8 @@ class FastJSController: UIViewController {
         tempStopBarButtonItem.tintColor = self.buttonColor
         return tempStopBarButtonItem
     }()
-    //底部活动按钮
+    
+    // 底部活动按钮
     lazy var actionBarButtonItem: UIBarButtonItem = {
         var tempActionBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.action,
                                                       target: self,
@@ -102,8 +113,6 @@ class FastJSController: UIViewController {
         tempActionBarButtonItem.tintColor = self.buttonColor
         return tempActionBarButtonItem
     }()
-    
-    var wkWebView = WKWebView()
     
     func getWKWebView() -> WKWebView {
         let webView = WKWebView(frame: self.view.bounds, configuration: getWebConfiguration())
@@ -129,7 +138,7 @@ class FastJSController: UIViewController {
             configuretion.userContentController.addUserScript(script)
         }
         
-        //异步需要回调，所以需要添加handler
+        // 异步需要回调，所以需要添加handler
         for item in self.mAsyncScriptArray {
             configuretion.userContentController.add(self, name: item.name)
         }
@@ -158,8 +167,8 @@ class FastJSController: UIViewController {
     deinit {
         wkWebView.stopLoading()
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        wkWebView.uiDelegate = nil;
-        wkWebView.navigationDelegate = nil;
+        wkWebView.uiDelegate = nil
+        wkWebView.navigationDelegate = nil
         
         if let _ = wkWebView.observationInfo {
             wkWebView.removeObserver(self, forKeyPath: titleKeyPath, context: nil)
@@ -215,14 +224,14 @@ class FastJSController: UIViewController {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
 
-        //释放handler
+        // 释放handler
         for item in self.mAsyncScriptArray {
             wkWebView.configuration.userContentController.removeScriptMessageHandler(forName: item.name)
             wkWebView.configuration.userContentController.removeAllUserScripts()
         }
     }
     
-    //MARK:- AutoLayout
+    /// MARK:- AutoLayout
     open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         wkWebView.frame = view.bounds
@@ -248,8 +257,9 @@ class FastJSController: UIViewController {
     }
 }
 
+// 封装 JS 交互方法
 extension FastJSController {
-    // MARK: - 添加JS
+    /// MARK: - 添加JS
     public func addAsyncJSFunc(functionName: String, parmers: [String], action: @escaping ([String:AnyObject]) -> Void) {
         var obj = self.mAsyncScriptArray.filter { (obj) -> Bool in
             return obj.name == functionName
@@ -277,7 +287,7 @@ extension FastJSController {
         }
     }
     
-    // MARK: - 插入JS
+    /// MARK: - 插入JS
     private func createScript() -> String {
         var result = "iOSApp = {"
         for item in self.mAsyncScriptArray {
@@ -307,7 +317,7 @@ extension FastJSController {
         return result
     }
 
-    // MARK: - 执行JS
+    /// MARK: - 执行JS
     public func actionJsFunc(functionName: String, pars: [AnyObject], completionHandler: ((Any?, Error?) -> Void)?) {
         var parString = ""
         for par in pars {
@@ -323,8 +333,9 @@ extension FastJSController {
     }
 }
 
+// WebView UI 样式及处理逻辑
 extension FastJSController {
-    //控制条
+    /// 控制条
     func updateToolbarItems() {
         backBarButtonItem.isEnabled = wkWebView.canGoBack
         forwardBarButtonItem.isEnabled = wkWebView.canGoForward
@@ -367,7 +378,7 @@ extension FastJSController {
         }
     }
     
-    //MARK: - Action
+    /// MARK: - Action
     @objc func goBackTapped(_ sender: UIBarButtonItem) {
         wkWebView.goBack()
     }
@@ -412,7 +423,7 @@ extension FastJSController {
     
 }
 
-// MARK: - WKUIDelegate
+/// MARK: - WKUIDelegate
 extension FastJSController: WKUIDelegate {
     public func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         let alert = UIAlertController(title: "提示", message: message, preferredStyle: .alert)
@@ -425,7 +436,7 @@ extension FastJSController: WKUIDelegate {
     }
 }
 
-// MARK: - WKNavigationDelegate
+/// MARK: - WKNavigationDelegate
 extension FastJSController: WKNavigationDelegate {
     public func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
         self.delegate?.didStartLoading()
@@ -519,12 +530,4 @@ extension FastJSController: WKScriptMessageHandler {
             funcObj.action?(dict)
         }
     }
-}
-
-
-
-struct JKWkWebViewHandler {
-    fileprivate var name:String!
-    fileprivate var parmers:[String]!
-    fileprivate var action:(([String:AnyObject]) -> Void)?
 }

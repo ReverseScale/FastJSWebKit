@@ -12,17 +12,27 @@ class ViewController: FastJSController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        let userInfo = ["name": "wb", "sex": "male", "phone": "12333434"]
+        
+        sendDateToJS()
+        
+        handleJSCallBack()
+        
+//        loadWithUrl(URL.init(string: "https://www.baidu.com")!)
+        loadWithFiles(resource: "test", withExtension: "html")
+    }
+    
+    /// 发数据：添加getUserInfo脚本，返回用户信息
+    func sendDateToJS() {
+        let userInfo = ["name": "WhatsXie", "sex": "male", "phone": "120"]
         let jsonData = try? JSONSerialization.data(withJSONObject: userInfo, options: .prettyPrinted)
         let jsonText = String.init(data: jsonData!, encoding: String.Encoding.utf8)
         
-        // 发数据：添加getUserInfo脚本，返回用户信息
         // 🖥 getUserInfo
         addSyncJSFunc(functionName: "getUserInfo", parmers: [jsonText!])
-        
-        
-        // 收数据：添加shareAction脚本，获得分享参数
+    }
+    
+    /// 收数据：添加shareAction脚本，获得分享参数
+    func handleJSCallBack() {
         // 🖥 shareAction
         addAsyncJSFunc(functionName: "shareAction", parmers: ["title", "content", "url", "shareBack"]) { [weak self] (dict) in
             print(dict["title"]!)
@@ -35,10 +45,6 @@ class ViewController: FastJSController {
                 
             })
         }
-        
-        //开始加载H5
-//        loadWithUrl(URL.init(string: "https://www.baidu.com")!)
-        loadWithFiles(resource: "test", withExtension: "html")
     }
 }
 
