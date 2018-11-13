@@ -1,5 +1,4 @@
 # FastJSWebKit
-轻量级 WKWebView <-> JS 通信方案 🤪
 
 ![](http://og1yl0w9z.bkt.clouddn.com/18-11-13/74833121.jpg)
 
