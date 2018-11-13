@@ -14,7 +14,7 @@ UIWebView 通过 KVC 拿到 UIWebView 的JSContext，通过 JSContext 实现交�
 从实现思路是来讲，UIWebView 和 WKWebView 是一样的。
 所以，本文只介绍 WKWebView 上 JS 和 Native 的交互思路，UIWebView 有需求的可以模仿实现。
 
-
+-----
 ### JS 和 Native 交互常用的场景
 常用的分为下面几种场景：
 
@@ -376,7 +376,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 最后发送`shareSucc`的字符串，告诉 Native 我们有一个`shareSucc`的函数可以接收分享的结果。
 
-
+-----
 ### JS 和 Native 统一封装
 上面讲了 JS 回调 Native，Native 回调 JS，实现了我们常用的一些业务逻辑。
 
@@ -627,6 +627,7 @@ class ViewController: JWebViewController {
 }
 ```
 
+-----
 ### 讲解 JWebViewController
 
 构造`JKWkWebViewHandler`类，存储信息
