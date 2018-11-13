@@ -3,6 +3,7 @@
 
 ![](http://og1yl0w9z.bkt.clouddn.com/18-11-13/74833121.jpg)
 
+-----
 ### 前言
 了解本文之前需要准备 JS 和 WebView 中的一些基础知识，需要知道 JS 的基本语法和 WebView 中调用 JS 的常用接口。
 
@@ -24,6 +25,7 @@ UIWebView 通过 KVC 拿到 UIWebView 的JSContext，通过 JSContext 实现交�
 
 * Native 告诉 H5 分享结果（这种属于原生调用JS）
 
+-----
 #### 1）H5 获取本地用户信息
 
 ##### *a.通过`WKUserContentController` 注入 JS 实现*
@@ -34,6 +36,7 @@ UIWebView 通过 KVC 拿到 UIWebView 的JSContext，通过 JSContext 实现交�
 let userInfo = ["name": "wb", "sex": "male", "phone": "12333434"]
 ```
 
+-----
 📱 1.a1 Native 注入 JS 变量实现如下
 
 ```Swift
@@ -58,6 +61,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 
 通过遍历用户信息的 key，把 key 作为变量，value 作为字符串值，注入到 JS 上下文中。
 
+-----
 🖥 在H5中实现调用如下
 ```js
 <!DOCTYPE html>
@@ -88,6 +92,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 </html>
 ```
 
+-----
 📱 1.a2 Native 注入 JS 对象实现如下
 ```Swift
 let userContent = WKUserContentController.init()
@@ -111,6 +116,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 
 通过把用户信息字典转化成JSON，作为对象赋值给用户信息，注入JS上下文中。
 
+-----
 🖥 在H5中实现调用如下
 ```js
 <!DOCTYPE html>
@@ -139,6 +145,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 </html>
 ```
 
+-----
 📱 1.a3 Native 注入 JS 函数实现如下
 
 ```Swift
@@ -165,6 +172,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 
 这样写的好处是，我们的H5在调用函数的时候，可以很容易知道哪些是 Native 注入，防止和本地造成冲突，便于理解。
 
+-----
 🖥 在H5中实现调用如下
 ```js
 <!DOCTYPE html>
@@ -199,6 +207,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 
 同样的 WebView 中的调用 H5，提供了`evaluateJavaScript`接口，此接口既可以执行JS 函数回调结果，也可以注入 JS。
 
+-----
 📱 使用接口实现JS函数的注入
 ```Swift
 let userContent = WKUserContentController.init()
@@ -226,10 +235,12 @@ func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 
 在WebView中加载完成之后，使用`evaluateJavaScript`实现了JS函数的注入，H5实现调用正常。
 
+-----
 #### 2）H5 传递信息给 Native，Native 调用分享
 
 很多时候 H5 需要传递信息给 Native，Native 再执行相应的逻辑。
 
+-----
 🖥 H5实现代码如下
 ```js
 <!DOCTYPE html>
@@ -260,6 +271,7 @@ func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
 ```
 H5 将分享内容通过`window.webkit.messageHandlers.shareAction.postMessage`交给 Native 
 
+-----
 📱 Native 实现代码如下
 ```Swift
 let userContent = WKUserContentController.init()
@@ -294,11 +306,12 @@ func userContentController(_ userContentController: WKUserContentController, did
 `userContent.add(self, name: "shareAction")`本地添加`shareAction`的接口声明，当JS调用`shareAction`回调代理方法，实现参数捕获（WKScriptMessage）。
 这样 Native 就得到了分享的传参了，然后可以调用本地 SDK 实现分享的逻辑了。
 
+-----
 #### 3）Native 告诉 H5 分享结果
 
 上面实现了 JS 传参数给 Native，但是 Native 还需要告诉 H5 分享结果。
 
-
+-----
 📱 Native 实现代码如下
 
 ```Swift
@@ -339,6 +352,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 获取`shareSucc`的函数回调名称，在合适的时候我们可以通过这个JS函数回调，告诉H5我们的分享结果。
 
+-----
 🖥 JS实现如下
 ```js
 <!DOCTYPE html>
@@ -382,6 +396,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 
 里面有很多重复的代码，实现起来也不友好，下面我们把这些重用的全部封装一下，改成好用的接口给上层，使 Native 和 JS 的开发人员都不用操心太多的实现细节。
 
+-----
 🖥 H5界面的代码
 
 ```js
@@ -425,6 +440,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 </html>
 ```
 
+-----
 📦 封装 WKWebView 基类 JWebViewController
 
 ```Swift
@@ -591,6 +607,7 @@ class JKWkWebViewHandler: NSObject {
 }
 ```
 
+-----
 📱 继承 JWebViewController 实现业务
 
 ```Swift
