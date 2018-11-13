@@ -28,6 +28,7 @@ UIWebView 通过 KVC 拿到 UIWebView 的JSContext，通过 JSContext 实现交�
 -----
 #### 1）H5 获取本地用户信息
 
+-----
 ##### *a.通过`WKUserContentController` 注入 JS 实现*
 
 现有用户信息格式如下，需要注入到JS，供H5调用：
@@ -203,6 +204,7 @@ wkWebView.load(URLRequest.init(url: URL.init(string: "http://192.168.2.1/js.html
 
 以上讲了三种方式实现用户信息的传递，都是通过`WKUserContentController`注入JS实现的，实际上我也可以通过网页视图的`evaluateJavaScript`方法实现注入。
 
+-----
 ##### *b.通过 `evaluateJavaScript` 方法实现*
 
 同样的 WebView 中的调用 H5，提供了`evaluateJavaScript`接口，此接口既可以执行JS 函数回调结果，也可以注入 JS。
