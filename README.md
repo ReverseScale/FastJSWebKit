@@ -1,8 +1,7 @@
 # FastJSWebKit
 
-![](http://og1yl0w9z.bkt.clouddn.com/18-11-13/74833121.jpg)
+![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-14/11671749.jpg)
 
------
 ### 前言
 了解本文之前需要准备 JS 和 WebView 中的一些基础知识，需要知道 JS 的基本语法和 WebView 中调用 JS 的常用接口。
 
