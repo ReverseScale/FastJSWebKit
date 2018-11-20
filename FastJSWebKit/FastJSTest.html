@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js Bridge demo</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        
+    function shareSuccessful(isShare) {
+        alert(isShare)
+    }
+
+    function reqUserInfoClick() {
+        try {
+            alert(iOSApp.getUserInfo())
+        } catch (err) {
+            alert(err)
+        }
+    }
+
+    function reqShareClick() {
+        try {
+            iOSApp.shareAction("我是标题", "我是内容详情", "http://www.XXXXXX", "shareSuccessful")
+        } catch (err) {
+            alert(err)
+        }
+    }
+
+    </script>
+    
+    <style type="text/css">
+    h1 {
+        font-size: 36px;
+        color: #606060;
+        font-family: PingFangSC-Regular, sans-serif;
+    }
+    .demo {width:760px; margin:20px auto 0 auto; height:70px;}
+    .button {
+        display: inline-block;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        font: 16px/100% 'Microsoft yahei',Arial, Helvetica, sans-serif;
+        padding: .5em 2em .55em;
+        text-shadow: 0 1px 1px rgba(0,0,0,.3);
+        -webkit-border-radius: .5em;
+        -moz-border-radius: .5em;
+        border-radius: .5em;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+        box-shadow: 0 1px 2px rgba(0,0,0,.2);
+    }
+    .button:hover {
+        text-decoration: none;
+    }
+    .button:active {
+        position: relative;
+        top: 1px;
+    }
+    .bigrounded {
+        -webkit-border-radius: 2em;
+        -moz-border-radius: 2em;
+        border-radius: 2em;
+    }
+    .medium {
+        font-size: 12px;
+        padding: .4em 1.5em .42em;
+    }
+    .small {
+        font-size: 11px;
+        padding: .2em 1em .275em;
+    }
+
+    /* white */
+    .white {
+        color: #606060;
+        border: solid 1px #b7b7b7;
+        background: #fff;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ededed));
+        background: -moz-linear-gradient(top,  #fff,  #ededed);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed');
+    }
+    .white:hover {
+        background: #ededed;
+        background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#dcdcdc));
+        background: -moz-linear-gradient(top,  #fff,  #dcdcdc);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#dcdcdc');
+    }
+    .white:active {
+        color: #999;
+        background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#fff));
+        background: -moz-linear-gradient(top,  #ededed,  #fff);
+        filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#ffffff');
+    }
+    </style>
+</head>
+
+<body>
+    <h1>从 Native 获取用户姓名、性别、手机号码信息</h1>
+    <a href="#" onclick="reqUserInfoClick()" class="button white bigrounded" style="font-size: 35px;">获取用户信息</a>
+    <h1>发送分享内容给 Native 并回调成功状态</h1>
+    <a href="#" onclick="reqShareClick()" class="button white bigrounded" style="font-size: 35px;">执行分享</a>
+</body>
+
+</html>

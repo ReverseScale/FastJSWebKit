@@ -18,12 +18,12 @@ class ViewController: FastJSController {
         handleJSCallBack()
         
 //        loadWithUrl(URL.init(string: "https://www.baidu.com")!)
-        loadWithFiles(resource: "test", withExtension: "html")
+        loadWithFiles(resource: "FastJSTest", withExtension: "html")
     }
     
     /// 发数据：添加getUserInfo脚本，返回用户信息
     func sendDateToJS() {
-        let userInfo = ["name": "WhatsXie", "sex": "male", "phone": "120"]
+        let userInfo = ["name": "WhatsXie", "sex": "male", "phone": "18701888109"]
         let jsonData = try? JSONSerialization.data(withJSONObject: userInfo, options: .prettyPrinted)
         let jsonText = String.init(data: jsonData!, encoding: String.Encoding.utf8)
         

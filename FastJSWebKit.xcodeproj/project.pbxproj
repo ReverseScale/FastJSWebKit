@@ -15,7 +15,7 @@
 		5261714D217862FF00CB29A5 /* FastJSWebKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5261714C217862FF00CB29A5 /* FastJSWebKitTests.swift */; };
 		52617158217862FF00CB29A5 /* FastJSWebKitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */; };
 		526171662178631100CB29A5 /* FastJSController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526171652178631100CB29A5 /* FastJSController.swift */; };
-		526171682178638500CB29A5 /* test.html in Resources */ = {isa = PBXBuildFile; fileRef = 526171672178638500CB29A5 /* test.html */; };
+		526171682178638500CB29A5 /* FastJSTest.html in Resources */ = {isa = PBXBuildFile; fileRef = 526171672178638500CB29A5 /* FastJSTest.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +50,7 @@
 		52617157217862FF00CB29A5 /* FastJSWebKitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastJSWebKitUITests.swift; sourceTree = "<group>"; };
 		52617159217862FF00CB29A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		526171652178631100CB29A5 /* FastJSController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastJSController.swift; sourceTree = "<group>"; };
-		526171672178638500CB29A5 /* test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.html; sourceTree = "<group>"; };
+		526171672178638500CB29A5 /* FastJSTest.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = FastJSTest.html; sourceTree = "<group>"; };
 		5261716A2178685D00CB29A5 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,7 +103,7 @@
 		52617136217862FE00CB29A5 /* FastJSWebKit */ = {
 			isa = PBXGroup;
 			children = (
-				526171672178638500CB29A5 /* test.html */,
+				526171672178638500CB29A5 /* FastJSTest.html */,
 				52617137217862FE00CB29A5 /* AppDelegate.swift */,
 				52617139217862FE00CB29A5 /* ViewController.swift */,
 				526171652178631100CB29A5 /* FastJSController.swift */,
@@ -248,7 +248,7 @@
 				52617142217862FF00CB29A5 /* LaunchScreen.storyboard in Resources */,
 				5261713F217862FF00CB29A5 /* Assets.xcassets in Resources */,
 				5261713D217862FE00CB29A5 /* Main.storyboard in Resources */,
-				526171682178638500CB29A5 /* test.html in Resources */,
+				526171682178638500CB29A5 /* FastJSTest.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
